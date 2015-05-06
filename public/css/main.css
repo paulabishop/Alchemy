@@ -1,0 +1,661 @@
+/*Author: Paula Bishop
+Revision date: 5/3/15
+File name: main.css
+Description: Style rules for website, including Google fonts and media queries for responsive design.*/
+
+/* Fonts are through @google fonts. font-family: 'Lato', sans-serif; because Adobe Typekit was too dang involved!
+Color Scheme for site:
+Plum Purple: #7C3199 or rgb(124,49,153)
+Blue-Violet: #3C12FF or rgb(60,18,255) [darker color for shadows: #290cb2]
+Beige: #FFE68D or rgb(255,230,141) [lighter beige for highlights: #fff2cd]
+Golden-Brown: #CC8F0D or rgb(204,143,13)
+Magenta-purple: #9D23CC or rgb(157,35,204);
+*/
+/*Overall styles*/
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+* {
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+body, html {
+    height: 100%;
+    max-width: 1500px;
+    font-family: "Lato", Verdana, sans-serif;
+}
+
+html{
+    margin:0 auto;
+    padding:1em;
+    background: url(../images/texture.jpg);
+}
+
+#wrapper {
+    width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+h1 {
+    font:700 1.3em "Lato", Verdana, sans-serif;
+    color: #7c3199;
+}
+
+h2 {
+    font:700 1.2em "Lato", Verdana, sans-serif;
+    color: #7c3199;
+}
+
+h4 {
+    font-family: "Lato", Verdana, sans-serif;
+    font-weight: 700;
+}
+
+ol,ul,li,a {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.portrait {
+    float: left;
+    margin: 0 15px 0 0;
+    border: solid 3px #7C3199;
+}
+
+/*general class to hide things based on certain conditions*/
+.hidden {
+    display: none;
+}
+
+/*masthead navigation section*/
+.mobile {
+    display: none;
+}
+
+#masthead {
+    display: inline-block;
+    position: relative;
+}
+
+#masthead img {
+    width: 100%;
+}
+
+#navbar {
+    display: inline-block;
+    margin: -7px 0 0 -50px;
+}
+
+#navbar ul li {
+    display: inline-block;
+    list-style-type: none;
+    font: 1.2em "Lato", Verdana, sans-serif;
+    font-weight: 400;
+
+}
+
+#navbar a {
+    background: #CC8F0D;
+    width: 100px;
+    height: 40px;
+    text-decoration: none;
+    color: #000;
+    padding: 7px 20px;
+}
+
+#navbar a:hover {
+    background-color: #7C3199;
+    color: #fff;
+}
+
+#navbar a.current {
+    background-color: #7C3199;
+    color: #fff;
+    font-weight: 700;
+}
+
+#login {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    z-index: 100;
+    font: .8em "Lato", Verdana, sans-serif;
+    font-weight: 400;
+    text-align: center;
+    color: #FFE68D;
+}
+
+#login a {
+    color: #fff2cd;
+}
+
+#login a:hover {
+    color: #FFE68D;
+}
+
+/*main body content formatting (left side)*/
+#left_content {
+    display: inline-block;
+    width: 60%;
+}
+
+#content {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    display: inline-block;
+}
+
+#text {
+    float: left;
+    height: 100%;
+}
+
+.inset {
+    padding-left: 30px;
+}
+
+#categories {
+    display: inline-block;
+    height: 100%;
+    background-color: rgba(255,230,141,.5);
+}
+
+#categories li {
+    display: inline-block;
+    margin: 0 -25px;
+}
+
+#categories img, .frame {
+    border: solid 3px #7C3199;
+}
+
+#categories img:hover {
+    opacity: .8;
+    border-color: #CC8F0D;
+}
+
+#categories figcaption {
+    font-weight: 700;
+    font-size: .9em;
+}
+
+/*Formatting results of requests by id, search, etc*/
+.result {
+    display: inline-block;
+    background-color: rgba(255,230,141,.3);
+    padding: 10px;
+    width: 100%;
+}
+
+.result_inner {
+    display: inline-block;
+    width: 80%;
+    padding-bottom: 15px;
+}
+
+.result .description {
+    display: inline-block;
+    width: 80%;
+    margin: 0 10px;
+}
+
+.result .title {
+    margin: -1px 0 0 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #7C3199;
+}
+
+/*This will not work because styling will not work if .title is an anchor...*/
+.result .title a:hover {
+    display: inline-block;
+    padding-left: 10px;
+    color: #3C12FF;
+}
+
+/*Recipe styling (individual recipes by id on recipes.show)*/
+.recipe {
+    padding: 10px;
+    background-color: rgba(255,230,141,.3);
+    width: 100%;
+}
+
+.main_photo {
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+/*Search and Sidebar--Right side content*/
+#right_content {
+    display: inline-block;
+    width: 35%;
+    float: right;
+}
+
+#search {
+    display: inline-block;
+    box-sizing: content-box;
+    background-color: #7C3199;
+    color: #fff;
+    margin: -20px -10px 0 40px;
+    padding: 0 20px;
+    width: 100%;
+    position: relative;
+}
+
+.search_box {
+    color: #fff;
+}
+
+.search_form {
+    padding-right: 10%;
+}
+
+.right-top {
+    position: absolute;
+    right: 100px;
+    top: 10px;
+    width: 35px;
+    height: 35px;
+}
+
+#sidebar {
+    display: inline-block;
+    background: url(../images/parchment.png) no-repeat scroll;
+    padding: 15px;
+    margin:0 0 4em 1em;
+    width: 350px;
+    /*   width: 90%; */
+    box-sizing: content-box;
+    height: 448px;
+    overflow: auto;
+}
+
+#sidebar a {
+    font-weight: bold;
+    color: #3C12FF;
+}
+
+#sidebar a:hover {
+    color: #7C3199;
+}
+
+#sidebar a.button {
+    color: white;
+    font-weight: normal;
+}
+
+#sidebar_content {
+    margin-top: 1em;
+    padding: 2em;
+    width: 95%;
+}
+
+ul.latest {
+    margin: -10px 0 15px 0;
+    padding: 0;
+}
+
+.spacer {
+    margin-top: 20px;
+}
+
+#right_static {
+    position: absolute;
+    top: 250px;
+    right: 30px;
+    background-color: rgba(255,230,141,.75);
+    width: 250px;
+    height: auto;
+    padding: 10px;
+}
+
+/*Thanks to http://css3buttongenerator.com/ for a big head-start on the button & button:hover codes below. Now if I could only get it to center!*/
+.button, #sidebar a .button {
+    background: #9D23CC;
+    background-image: -webkit-linear-gradient(top, #9D23CC, #7C3199);
+    background-image: -moz-linear-gradient(top, #9D23CC, #7C3199);
+    background-image: -ms-linear-gradient(top, #9D23CC, #7C3199);
+    background-image: -o-linear-gradient(top, #9D23CC, #7C3199);
+    background-image: linear-gradient(to bottom, #9D23CC, #7C3199);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    -webkit-box-shadow: 4px 3px 8px #666666;
+    -moz-box-shadow: 4px 3px 8px #666666;
+    box-shadow: 4px 3px 8px #666666;
+    font: 700 1.3em "Lato", Verdana, sans-serif;
+    color: #fff2cd;
+    /* font-size: 20px; */
+    padding: 5px 20px 5px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.button:hover, #sidebar a:hover .button {
+    background: #3C12FF;
+    background-image: -webkit-linear-gradient(top, #3C12FF, #290cb2);
+    background-image: -moz-linear-gradient(top, #3C12FF, #290cb2);
+    background-image: -ms-linear-gradient(top, #3C12FF, #290cb2);
+    background-image: -o-linear-gradient(top, #3C12FF, #290cb2);
+    background-image: linear-gradient(to bottom, #3C12FF, #290cb2);
+    text-decoration: none;
+}
+
+.red_button {
+    background: #f5426f;
+    background-image: -webkit-linear-gradient(top, #f5426f, #ab0a80);
+    background-image: -moz-linear-gradient(top, #f5426f, #ab0a80);
+    background-image: -ms-linear-gradient(top, #f5426f, #ab0a80);
+    background-image: -o-linear-gradient(top, #f5426f, #ab0a80);
+    background-image: linear-gradient(to bottom, #f5426f, #ab0a80);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    -webkit-box-shadow: 0px 1px 3px #666666;
+    -moz-box-shadow: 0px 1px 3px #666666;
+    box-shadow: 0px 1px 3px #666666;
+    font: 700 1.3em "Lato", Verdana, sans-serif;
+    color: #fff2cd;
+    padding: 5px 20px 5px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.red_button:hover {
+    background: #fac014;
+    background-image: -webkit-linear-gradient(top, #fac014, #ff0808);
+    background-image: -moz-linear-gradient(top, #fac014, #ff0808);
+    background-image: -ms-linear-gradient(top, #fac014, #ff0808);
+    background-image: -o-linear-gradient(top, #fac014, #ff0808);
+    background-image: linear-gradient(to bottom, #fac014, #ff0808);
+    text-decoration: none;
+}
+
+/*Form Styling*/
+fieldset {
+    border: none;
+}
+
+fieldset:last-child {
+    border: none;
+}
+
+legend {
+    font-family: "Lato", Verdana, sans-serif;
+    font-size: 1.4em;
+    color: rgba(255,230,141,.5);
+}
+form {
+    margin-bottom: 1em;
+}
+form ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+form li {
+    margin: 0;
+    margin-bottom: 1em;
+    padding: 0;
+    font-size: .9em;
+}
+
+.form {
+    width: 400px;
+}
+
+.form .label {
+    display: inline-block;
+    width: 200px;
+    vertical-align: top;
+    text-align: left;
+    margin: 10px;
+    color: rgba(255,255,255,.5);
+}
+
+.form select {
+    font-size: 1.2em;
+}
+.form input[type="text"], .form textarea, .form input[type="email"], .form input[type="password"] {
+    /*  font-size: 1.2em; */
+    color: black;
+    border: 1px solid #7C3199;
+    background-color: white;
+    box-shadow: inset 0 0 10px rgba(255,230,141,.5);
+    width: 400px;
+    padding: 5px;
+}
+.form input[type="text"]:focus, .form textarea:focus {
+    background-color: white;
+    color: black;
+}
+
+.radio-set {
+    background-color: rgb(255,230,141);
+    margin: 20px -10px 20px 25px;
+}
+
+.form_submit {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.terms {
+    background-color: rgb(255,230,141);
+    padding: 5px 15px;
+    border: 2px solid #9D23CC;
+    max-width: 600px;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+/*Footer*/
+
+#stickybottom {
+    /*  margin-top: 60px; */
+    display: inline-block;
+    height: 40px;
+    width: 100%;
+    background-color: #7C3199;
+    color: #fff2cd;
+}
+
+footer {
+    margin: -10px 0 5px 20px;
+}
+
+.clear {
+    clear:both;
+    line-height:0;
+}
+
+/* Media Queries for breakpoints for better responsive design */
+
+@media screen and (max-width: 940px) {
+    #login {
+        top: 95px;
+    }
+
+    #left_content {
+        width: 55%;
+    }
+
+    #right_content {
+        width: 40%;
+    }
+
+
+    #sidebar {
+        display: inline-block;
+        background: #FFE68D;
+        margin: 1em 2em;
+        width: 85%;
+        height: auto;
+        overflow: auto;
+    }
+
+    #sidebar_content {
+        margin: 10px;
+        padding: 5px;
+    }
+
+    #search {
+        margin: 0;
+    }
+
+    #stickybottom {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    #login {
+        top: 80px;
+    }
+
+    #text {
+        width: 90%;
+        height: auto;
+    }
+
+    #search.right-top {
+        position: absolute;
+        right: 50px;
+        top: 10px;
+        width: 35px;
+        height: 25px;
+    }
+
+    .right-top { right: 50px;}
+
+}
+
+@media screen and (max-width: 760px) {
+
+    #login {
+        top: 70px;
+    }
+
+    #sidebar {
+        margin: 0;
+    }
+
+    #sidebar_content {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    #search.right-top {
+        position: absolute;
+        left: 10px;
+        top: 145px;
+        z-index: 100;
+    }
+
+    #right_static {
+        position: static;
+        display: inline-block;
+    }
+
+}
+
+@media screen and (max-width: 690px) {
+    body { margin: -3%;}
+    #login, .desktop { display: none; }
+    .mobile { display: inline; }
+    /* #wrapper { text-align: center; } /*this will center inline-block divs on page*/
+    #masthead {
+        padding: 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #navbar { /*I am having trouble at this point--I cannot figure out why the navbar is so short and messes up the links!!! Padding does nothing--Inspect element shows it to be 362px wide and not 600px like the masthead in which it is nested. */
+        margin: 0;
+    }
+
+    #navbar ul {
+        margin-bottom: -20px;
+    }
+
+    #navbar li {
+        padding: 5px 0 15px;
+    }
+
+    #content, #left_content, #right_content {
+        width: 95%;
+        margin: 1em;
+        padding-left: .5em;
+    }
+
+    #main {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    #text {
+        display: inline-block;
+        width: 97%;
+        text-align: left;
+    }
+
+    #categories { width: 97%; }
+
+    #sidebar {
+        position: initial;
+        width: 70%;
+    }
+
+    #search {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #search.right-top {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    #stickybottom {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 595px) {
+    html {
+        padding: 0 10px 0 0;
+    }
+    #navbar  {
+        margin-left: -15px;
+        text-align: center;
+    }
+
+    #navbar a {
+        display: block;
+        width: auto;
+        border-radius: 10px;
+    }
+
+    #navbar ul li {
+        display: inline-block;
+        font-size: 1.5em;
+        text-align: center;
+        width: 90%;
+        padding: .25em;
+    }
+
+    h1 { font-size: 1.7em;}
+    p { font-size: 1.1em; }
+}
