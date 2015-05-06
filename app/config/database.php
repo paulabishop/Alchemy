@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'cookbook',
-            'username'  => 'paula_admin',
-            'password'  => 'q1w2e3r4t5y6',
+			'database'  => 'database_name',
+            'username'  => 'username',
+            'password'  => 'password',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
